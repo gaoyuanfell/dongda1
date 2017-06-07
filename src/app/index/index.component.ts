@@ -8,10 +8,7 @@ import {GlobalService} from "../../service/global-service";
 })
 export class IndexComponent implements OnInit {
 
-    global;
-
-    constructor(private _global: GlobalService) {
-        this.global = _global.global;
+    constructor(private _globalService: GlobalService) {
     }
 
     ngOnInit() {

@@ -8,18 +8,10 @@ import {GlobalService} from "../../service/global-service";
 })
 export class UserComponent implements OnInit {
 
-    global;
-
-    constructor(private _global: GlobalService) {
-        this.global = _global.global;
+    constructor(private _globalService: GlobalService) {
     }
 
     ngOnInit() {
-        console.info(this._global.global);
-    }
-
-    setName() {
-        this._global.global.name = 'hello gaoyuan';
     }
 
 }
