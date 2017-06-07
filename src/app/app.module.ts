@@ -16,11 +16,11 @@ import { IndexComponent } from './index/index.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
     providers: [
         {provide: APP_BASE_HREF, useValue: '/'},
-        httpInterceptor
+        httpInterceptor,
     ],
     bootstrap: [AppComponent]
 })

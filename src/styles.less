@@ -1,11 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0)
+}
+
+::-webkit-scrollbar-track:active {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .05)
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1)
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1)
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, .6)
+}
+
 ul,ol{
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
-
 
 html, body {
     margin: 0;
@@ -34,6 +63,7 @@ body {
     color: #292b2c;
     text-rendering: geometricPrecision;
     background-color: #f5f8fa;
+    overflow: hidden;
     //user-select: none;
     //-webkit-user-select: none;
     //-moz-user-select: none;

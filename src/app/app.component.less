@@ -1,8 +1,8 @@
-$header_height:0.6rem;
-$menu_width:2rem;
+@header_height:0.6rem;
+@menu_width:2rem;
 .header{
     width: 100%;
-    height: $header_height;
+    height: @header_height;
     -webkit-box-shadow: 0 1px 8px rgba(0,0,0,.3);
     box-shadow: 0 1px 8px rgba(0,0,0,.3);
 }
@@ -10,7 +10,7 @@ $menu_width:2rem;
 .menu{
     position: absolute;
     top: 0.6rem;
-    width: $menu_width;
+    width: @menu_width;
     bottom: 0;
     ul{
         padding-top: 10px;
@@ -33,10 +33,10 @@ $menu_width:2rem;
 
 .main{
     position: absolute;
-    top: $header_height;
-    left: $menu_width;
+    top: @header_height;
+    left: @menu_width;
     right: 0;
     bottom: 0;
-    margin: 10px;
+    margin: 10px 10px 0 10px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
 }
