@@ -1,4 +1,6 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {BrowserModule} from "@angular/platform-browser";
+import {FormsModule} from "@angular/forms";
 import {CommonModule} from '@angular/common';
 import {HomeRoutingModule} from "./home-routing.module";
 import {HomeComponent} from "./home.component";
@@ -13,11 +15,18 @@ import {InvoiceComponent} from "../invoice/invoice.component";
 import {IndexComponent} from "../index/index.component";
 import {UserComponent} from "../user/user.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
+import {ModalComponent, PagingComponent, DatepickerModule} from "../basic/components";
+import {AddPlatformComponent} from "../platform/add-platform.component";
+import {GoBackDirective} from "../basic/directives/go-back";
+import {AddInvoiceComponent} from "../invoice/add-invoice.component";
 
 @NgModule({
     imports: [
         CommonModule,
+        BrowserModule,
+        FormsModule,
         HomeRoutingModule,
+        DatepickerModule.forRoot(),
     ],
     exports: [],
     declarations: [
@@ -33,7 +42,14 @@ import {PageNotFoundComponent} from "../page-not-found/page-not-found.component"
         UserComponent,
         IndexComponent,
         PageNotFoundComponent,
-    ]
+        AddPlatformComponent,
+        AddInvoiceComponent,
+
+        PagingComponent,
+        ModalComponent,
+        GoBackDirective,
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeModule {
 }

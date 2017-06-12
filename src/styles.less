@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'iconfont';  /* project id 324570 */
+    src: url('//at.alicdn.com/t/font_ifgc2ovh3qouhaor.eot');
+    src: url('//at.alicdn.com/t/font_ifgc2ovh3qouhaor.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_ifgc2ovh3qouhaor.woff') format('woff'),
+    url('//at.alicdn.com/t/font_ifgc2ovh3qouhaor.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_ifgc2ovh3qouhaor.svg#iconfont') format('svg');
+}
+
+.icon{
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px
@@ -63,7 +80,101 @@ body {
     text-rendering: geometricPrecision;
     background-color: #f5f8fa;
     overflow: hidden;
-    //user-select: none;
-    //-webkit-user-select: none;
-    //-moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+@main-padding-left:1.5rem;
+
+/*页面top标题*/
+.heading-top{
+    height: 50px;
+    line-height: 50px;
+    padding-left: @main-padding-left;
+    border-bottom: 1px solid #dbdcdf;
+    .title{
+        font-size: 18px;
+        color: #6b798e;
+    }
+    .go-back{
+        width: auto;
+        height: 40px;
+        margin-right: 10px;
+        line-height: 40px;
+        i{
+            font-size: 22px;
+            color: #4d98f3;
+            cursor: pointer;
+        }
+    }
+}
+
+.data-info{
+    padding: @main-padding-left 20px 0;
+    h2{
+        color: #6b798e;
+        font-size: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #dbdcdf;
+    }
+    .info{
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+}
+
+/*表格search-bar*/
+.search-bar{
+    padding-top: 10px;
+    padding-left: @main-padding-left;
+    padding-bottom: 10px;
+
+}
+
+.icon-input {
+    position: relative;
+    display: inline-table;
+    vertical-align: middle;
+    .form-control {
+        padding-left: 35.5px;
+        cursor: pointer;
+    }
+    .icon {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: block;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        color: #999;
+        text-align: center;
+    }
+}
+
+.no-content{
+    width: 350px;
+    line-height: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid #dbdcdf;
+    border-radius: 4px;
+    background-color: #edeff2;
+    margin: 10% auto;
+}
+
+/*重写*/
+.main .table thead th{
+    border-bottom: 1px solid #eceeef;
+}
+
+.main .table th, .main .table td {
+    padding-left: @main-padding-left;
+}
+
+.main .btn{
+    cursor: pointer;
 }

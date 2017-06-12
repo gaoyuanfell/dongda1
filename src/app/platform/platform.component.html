@@ -1,3 +1,50 @@
-<p>
-    platform works!
-</p>
+<div class="heading-top">
+    <span class="title">
+        平台信息
+    </span>
+</div>
+
+<div class="search-bar clearfix">
+    <div class="float-left">
+        <button class="btn btn-primary" type="button" (click)="add()">添加员工</button>
+
+        <div class="icon-input">
+            <input type="text" class="form-control" (change)="change()" readonly ngyDatepicker #d="ngyDatepicker" name="datepicker" [(ngModel)]="date" (click)="d.toggle()">
+            <i class="icon">&#xe600;</i>
+        </div>
+
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>名称</th>
+        <th>邮箱</th>
+        <th>电话</th>
+        <th>角色</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of [0,1,2,3,4]">
+        <td>释迦摩尼</td>
+        <td>465716992@qq.com</td>
+        <td>1777****046</td>
+        <td>管理员</td>
+        <td>
+
+            <a href="javascript:void 0">注销</a>
+            <a routerLink="1">修改</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<ngy-paging [(ngModel)]="page" (goPage)="goPage()"></ngy-paging>
+
+<!--<div class="no-content">
+    <span>您好，当前暂时没有平台消息！</span>
+</div>-->
+
+

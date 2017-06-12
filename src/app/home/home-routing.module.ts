@@ -12,48 +12,22 @@ import {SaleComponent} from "../sale/sale.component";
 import {ReportComponent} from "../report/report.component";
 import {MoneyComponent} from "../money/money.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
+import {AddPlatformComponent} from "../platform/add-platform.component";
+import {AddInvoiceComponent} from "../invoice/add-invoice.component";
 
 const routeList: Routes = [
-    {
-        path: 'user',
-        component: UserComponent
-    },
-    {
-        path: 'index',
-        component: IndexComponent
-    },
-    {
-        path: 'platform',
-        component: PlatformComponent
-    },
-    {
-        path: 'auth',
-        component: AuthComponent
-    },
-    {
-        path: 'contract',
-        component: ContractComponent
-    },
-    {
-        path: 'invoice',
-        component: InvoiceComponent
-    },
-    {
-        path: 'customer',
-        component: CustomerComponent
-    },
-    {
-        path: 'sale',
-        component: SaleComponent
-    },
-    {
-        path: 'money',
-        component: MoneyComponent
-    },
-    {
-        path: 'report',
-        component: ReportComponent
-    }
+    {path: 'user', component: UserComponent},
+    {path: 'index', component: IndexComponent},
+    {path: 'platform', component: PlatformComponent},
+    {path: 'platform/:id', component: AddPlatformComponent},
+    {path: 'auth', component: AuthComponent},
+    {path: 'contract', component: ContractComponent},
+    {path: 'invoice', component: InvoiceComponent},
+    {path: 'invoice/:id', component: AddInvoiceComponent},
+    {path: 'customer', component: CustomerComponent},
+    {path: 'sale', component: SaleComponent},
+    {path: 'money', component: MoneyComponent},
+    {path: 'report', component: ReportComponent}
 ];
 
 const routes: Routes = [
