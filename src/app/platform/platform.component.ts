@@ -15,6 +15,8 @@ export class PlatformComponent implements OnInit {
     ngOnInit() {
     }
 
+    date = {year: 2017, month: 6, day: 7};
+
     page: Page<any> = {
         totalPage: 120,
         pageIndex: 10,
@@ -31,7 +33,5 @@ export class PlatformComponent implements OnInit {
     add() {
         this._router.navigate(['/!/platform/0'])
     }
-
-    date = {year: 2017, month: 6, day: 7};
 
 }

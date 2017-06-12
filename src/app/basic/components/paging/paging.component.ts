@@ -66,7 +66,7 @@ export class PagingComponent implements OnInit, ControlValueAccessor, OnChanges 
         this.pageList = this.getPageList(this.pageShow, this.page.totalPage, this.page.pageIndex);
     }
 
-    go(event: any, input: HTMLInputElement) {
+    go(event: any, input?: HTMLInputElement) {
         let pageIndex = parseInt(event.target.getAttribute('data-number'));
         let type = parseInt(event.target.getAttribute('data-type'));
         if (isNaN(pageIndex) || isNaN(type) || isNaN(parseInt(String(this.page.pageIndex)))) return;
