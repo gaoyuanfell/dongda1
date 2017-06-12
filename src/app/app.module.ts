@@ -21,7 +21,7 @@ import {RegisterComponent} from './register/register.component';
         HomeModule
     ],
     providers: [
-        {provide: APP_BASE_HREF, useValue: '/'},
+        {provide: APP_BASE_HREF, useValue: '/dongda1'},
         httpInterceptor,
     ],
     bootstrap: [AppComponent],
