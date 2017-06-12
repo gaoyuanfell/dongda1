@@ -5,18 +5,20 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {httpInterceptor} from "../providers/Interceptor";
 import {APP_BASE_HREF} from "@angular/common";
-import {UserComponent} from './user/user.component';
-import { IndexComponent } from './index/index.component';
+import {LoginComponent} from './login/login.component';
+import {HomeModule} from "./home/home.module";
+import {RegisterComponent} from './register/register.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        UserComponent,
-        IndexComponent
+        LoginComponent,
+        RegisterComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HomeModule
     ],
     providers: [
         {provide: APP_BASE_HREF, useValue: '/'},

@@ -5,7 +5,7 @@ import {GlobalService} from "../service/global-service";
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less'],
-    providers:[
+    providers: [
         GlobalService
     ]
 })
