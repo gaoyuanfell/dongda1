@@ -22,8 +22,8 @@ export class PlatformComponent implements OnInit {
         pageIndex: 10,
     };
 
-    goPage(page) {
-        console.info(page)
+    goPage() {
+
     }
 
     change() {

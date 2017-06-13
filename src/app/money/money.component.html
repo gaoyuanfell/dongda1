@@ -1,3 +1,39 @@
-<p>
-    money works!
-</p>
+<div class="heading-top">
+    <span class="title">
+        应收账款
+    </span>
+</div>
+
+<div class="search-bar clearfix">
+    <div class="float-left">
+        <div class="icon-input">
+            <input type="text" class="form-control" (change)="change()" readonly ngyDatepicker #d="ngyDatepicker" name="datepicker" [(ngModel)]="query.time" (click)="d.toggle()">
+            <i class="icon">&#xe600;</i>
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>时间</th>
+        <th>金额</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of []">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <a routerLink="1">查看</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="no-content">
+    <span>您好，当前暂时没有应收账款内容！</span>
+</div>

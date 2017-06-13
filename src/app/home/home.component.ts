@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
         {name: '合同信息', link: 'contract'},
         {name: '发票信息', link: 'invoice'},
         {name: '客户资料', link: 'customer'},
-        {name: '销售计划', link: 'sale'},
+        // {name: '销售计划', link: 'sale'},
         {name: '应收账款', link: 'money'},
         {name: '报表', link: 'report'},
     ];

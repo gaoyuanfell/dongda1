@@ -14,6 +14,7 @@ import {MoneyComponent} from "../money/money.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {AddPlatformComponent} from "../platform/add-platform.component";
 import {AddInvoiceComponent} from "../invoice/add-invoice.component";
+import {AddCustomerComponent} from "../customer/add-customer.component";
 
 const routeList: Routes = [
     {path: 'user', component: UserComponent},
@@ -25,6 +26,7 @@ const routeList: Routes = [
     {path: 'invoice', component: InvoiceComponent},
     {path: 'invoice/:id', component: AddInvoiceComponent},
     {path: 'customer', component: CustomerComponent},
+    {path: 'customer/:id', component: AddCustomerComponent},
     {path: 'sale', component: SaleComponent},
     {path: 'money', component: MoneyComponent},
     {path: 'report', component: ReportComponent}

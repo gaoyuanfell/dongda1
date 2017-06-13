@@ -166,6 +166,15 @@ export class NgmInputDatepicker implements OnChanges,
     }
 
     writeValue(value) {
+        if(value){
+            if(value instanceof Date){
+                value = {
+                    year:value.getFullYear(),
+                    month:value.getMonth() + 1,
+                    day:value.getDate(),
+                }
+            }
+        }
         const ngbDate = value ? new NgmDate(value.year, value.month, value.day) : null;
         this._model = this._calendar.isValid(value) ? ngbDate : null;
         this._writeModelValue(this._model);

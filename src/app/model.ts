@@ -17,3 +17,19 @@ export interface Result<T> {
     doc?: T
     msg?: string
 }
+
+export interface User{
+    user?:string
+    password?:string
+}
+
+export class Register{
+    password:string = '';
+    _password:string = '';
+    type:number = 1;
+    company:string = '';
+    address:string = '';
+    email:string = '';
+    phone:string = '';
+    nickName:string = '';
+}

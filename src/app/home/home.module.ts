@@ -1,6 +1,6 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from '@angular/common';
 import {HomeRoutingModule} from "./home-routing.module";
 import {HomeComponent} from "./home.component";
@@ -19,16 +19,23 @@ import {ModalComponent, PagingComponent, DatepickerModule} from "../basic/compon
 import {AddPlatformComponent} from "../platform/add-platform.component";
 import {GoBackDirective} from "../basic/directives/go-back";
 import {AddInvoiceComponent} from "../invoice/add-invoice.component";
+import {AddCustomerComponent} from "../customer/add-customer.component";
 
 @NgModule({
     imports: [
         CommonModule,
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HomeRoutingModule,
         DatepickerModule.forRoot(),
     ],
-    exports: [],
+    exports: [
+        CommonModule,
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
     declarations: [
         HomeComponent,
         PlatformComponent,
@@ -44,6 +51,7 @@ import {AddInvoiceComponent} from "../invoice/add-invoice.component";
         PageNotFoundComponent,
         AddPlatformComponent,
         AddInvoiceComponent,
+        AddCustomerComponent,
 
         PagingComponent,
         ModalComponent,

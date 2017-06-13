@@ -7,6 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MoneyComponent implements OnInit {
 
+    query:any = {time:new Date()}
+
+    change(){
+
+    }
+
     constructor() {
     }
 
