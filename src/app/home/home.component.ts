@@ -8,16 +8,16 @@ import {Component, OnInit} from '@angular/core';
 export class HomeComponent implements OnInit {
 
     routes = [
-        {name: '首页', link: 'index'},
-        {name: '个人信息', link: 'user'},
-        {name: '平台信息', link: 'platform'},
-        {name: '权限', link: 'auth'},
-        {name: '合同信息', link: 'contract'},
-        {name: '发票信息', link: 'invoice'},
-        {name: '客户资料', link: 'customer'},
-        // {name: '销售计划', link: 'sale'},
-        {name: '应收账款', link: 'money'},
-        {name: '报表', link: 'report'},
+        {name: '首页', link: 'index',icon:'&#xe601;'},
+        {name: '个人信息', link: 'user',icon:'&#xe61c;'},
+        {name: '平台信息', link: 'platform',icon:'&#xe629;'},
+        {name: '权限', link: 'auth',icon:'&#xe62d;'},
+        {name: '合同信息', link: 'contract',icon:'&#xe63a;'},
+        {name: '发票信息', link: 'invoice',icon:'&#xe647;'},
+        {name: '客户资料', link: 'customer',icon:'&#xe711;'},
+        // {name: '销售计划', link: 'sale',icon:'&#xe644;'},
+        {name: '应收账款', link: 'money',icon:'&#xe724;'},
+        {name: '报表', link: 'report',icon:'&#xe639;'},
     ];
 
     constructor() {

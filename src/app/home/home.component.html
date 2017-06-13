@@ -3,7 +3,10 @@
 </header>
 <nav class="menu">
     <ul>
-        <li *ngFor="let r of routes" [routerLink]="r.link" routerLinkActive="active">{{r.name}}</li>
+        <li *ngFor="let r of routes" [routerLink]="r.link" routerLinkActive="active">
+            <i class="icon" [innerHTML]="r.icon"></i>
+            <span class="menu-name">{{r.name}}</span>
+        </li>
     </ul>
 </nav>
 <div class="main">
