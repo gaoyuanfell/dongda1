@@ -1,0 +1,96 @@
+.select-modal {
+    outline: none;
+    display: inline-block;
+    border: 1px solid #dbdcdf;
+    border-radius: 2px;
+    cursor: pointer;
+    .group-title {
+        height: 28px;
+        padding: 0 10px;
+        background-color: #f5f5f5;
+        text-align: center;
+        line-height: 28px;
+        color: #333;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .console-search {
+        display: inline-block;
+        width: 140px;
+        vertical-align: middle;
+        height: 28px;
+        border: none;
+        border-radius: 0 2px 2px 0;
+        margin-left: -4px;
+        padding-right: 20px;
+        position: relative;
+        p {
+            margin: 0;
+            padding-left: 5px;
+            padding-top: 5px;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .icon {
+
+        }
+    }
+    .console-drop-down {
+        border: 1px solid #dbdcdf;
+        background-color: #fff;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .07);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        //display: none;
+        text-align: left;
+        padding: 2px 0;
+        top: 30px;
+        left: 0;
+        ul {
+            max-width: 339px;
+            min-width: 139px;
+            max-height: 280px;
+            overflow: auto;
+            margin: 0;
+            li {
+                //position: relative;
+                border-bottom: 1px solid #dbdcdf;
+                padding: 0 32px 0 12px;
+                display: block;
+                height: 28px;
+                line-height: 28px;
+                white-space: nowrap;
+                color: #999;
+                &:last-child {
+                    border-bottom: 0;
+                }
+                &:hover {
+                    background-color: #358bf2;
+                    color: #fff;
+                }
+            }
+        }
+        .search {
+            height: 28px;
+            width: 100%;
+            position: relative;
+            input[type=search] {
+                border: none;
+                height: 28px;
+                line-height: 28px;
+                width: 100%;
+                padding: 0 32px 0 12px;
+                outline: none;
+                border-bottom: 1px solid #dbdcdf;
+            }
+            .icon-svg {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}

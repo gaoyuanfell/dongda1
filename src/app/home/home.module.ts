@@ -20,6 +20,7 @@ import {AddPlatformComponent} from "../platform/add-platform.component";
 import {GoBackDirective} from "../basic/directives/go-back";
 import {AddInvoiceComponent} from "../invoice/add-invoice.component";
 import {AddCustomerComponent} from "../customer/add-customer.component";
+import {SelectComponent} from "../basic/components/select/select.component";
 
 @NgModule({
     imports: [
@@ -53,6 +54,7 @@ import {AddCustomerComponent} from "../customer/add-customer.component";
         AddInvoiceComponent,
         AddCustomerComponent,
 
+        SelectComponent,
         PagingComponent,
         ModalComponent,
         GoBackDirective,
