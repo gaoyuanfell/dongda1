@@ -1,11 +1,55 @@
-@header_height: 4.5rem;
-@menu_width: 15rem;
+@header_height: 54px;
+@menu_width: 60px;
+@menu_width_hover: 180px;
+@subnav_width: 120px;
 .header {
     width: 100%;
     height: @header_height;
     -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
     box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
     background-color: #4074e1;
+    z-index: 3;
+}
+
+.subnav {
+    position: absolute;
+    top: @header_height;
+    bottom: 0;
+    width: @subnav_width;
+    left: @menu_width;
+    background-color: #f3f4f4;
+    ul{
+        padding-top: 10px;
+        li{
+            width: @subnav_width;
+            outline: none;
+            cursor: pointer;
+            padding: 0 10px 0 10px;
+            font-size: 12px;
+            height: 48px;
+            line-height: 50px;
+            -webkit-transition: background-color .3s cubic-bezier(0, 0, 0.2, 1);
+            transition: background-color .3s cubic-bezier(0, 0, 0.2, 1);
+            border-bottom: 1px solid #c3cad9;
+            &:hover {
+                color: #fff !important;
+                background-color: #4683e6;
+            }
+            &.active {
+                color: #4683e6;
+            }
+            &:first-child{
+                font-size: 14px;
+                font-weight:600;
+                background-color: #f3f4f4;
+                color: #6b798e;
+            }
+            &:first-child:hover{
+                background-color: #f3f4f4 !important;
+                color: #6b798e !important;
+            }
+        }
+    }
 }
 
 .menu {
@@ -13,9 +57,20 @@
     top: @header_height;
     width: @menu_width;
     bottom: 0;
+    overflow-x: hidden;
+    transition: width 0.1s;
+    background-color: #e1e6f0;
+    z-index: 2;
+    &:hover {
+        width: @menu_width_hover;
+        overflow-y: auto;
+        background-color: #fff;
+        border-right: 1px solid #ccc;
+    }
     ul {
         padding-top: 10px;
         li {
+            width: @menu_width_hover;
             outline: none;
             cursor: pointer;
             padding: 0 12px 0 20px;
@@ -30,19 +85,23 @@
                 background-color: #e7e7e7;
             }
             &.active {
-                background-color: #e7e7e7;
+                background-color: #f4f9ff;
             }
-            .icon{
+            .icon {
                 font-size: 20px;
                 color: rgba(0, 0, 0, 0.8);
             }
-            .menu-name{
-                padding-left: 10px;
+            .menu-name {
+                padding-left: 20px;
                 font-size: 16px;
                 font-weight: 500;
             }
         }
     }
+}
+
+.subnav + .main{
+    left: @menu_width + @subnav_width;
 }
 
 .main {
@@ -53,4 +112,7 @@
     bottom: 0;
     margin: 10px 10px 0 10px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    background-color: #fff;
+    transition: left 0.1s;
 }
