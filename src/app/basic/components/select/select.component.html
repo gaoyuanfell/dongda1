@@ -1,19 +1,19 @@
 <div class="select-modal" tabindex="0">
-    <div class="group-title">
+    <div class="group-title" #groupTitle>
         业务组
     </div>
     <div class="console-search">
-        <p>全部</p>
-        <div class="console-drop-down">
-            <div class="search">
-                <input type="search">
-                <i class="icon-svg"></i>
+        <p #consoleValue (click)="targetDropDown()">{{valueText}}</p>
+        <div class="console-drop-down" #consoleDropDown>
+            <div class="drop-down-shadow">
+                <div class="search">
+                    <input type="search" #inputSearch tabindex="1" placeholder="过滤">
+                    <i class="icon-svg"></i>
+                </div>
+                <ul *ngIf="list.length != 0;">
+                    <li *ngFor="let l of list;index as i;" (click)="select(l)">{{l[valueField]}}</li>
+                </ul>
             </div>
-            <ul>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-            </ul>
         </div>
     </div>
 </div>

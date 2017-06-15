@@ -128,7 +128,7 @@ export class NgmInputDatepicker implements OnChanges,
 
     ngAfterViewInit(): void {
         this._renderer.listen(this._elRef.nativeElement,'blur',() => {
-            console.info('ok')
+
         })
     }
 
