@@ -21,6 +21,7 @@ import {GoBackDirective} from "../basic/directives/go-back";
 import {AddInvoiceComponent} from "../invoice/add-invoice.component";
 import {AddCustomerComponent} from "../customer/add-customer.component";
 import {SelectComponent} from "../basic/components/select/select.component";
+import {SearchComponent} from "../basic/components/search/search.component";
 
 @NgModule({
     imports: [
@@ -54,6 +55,7 @@ import {SelectComponent} from "../basic/components/select/select.component";
         AddInvoiceComponent,
         AddCustomerComponent,
 
+        SearchComponent,
         SelectComponent,
         PagingComponent,
         ModalComponent,

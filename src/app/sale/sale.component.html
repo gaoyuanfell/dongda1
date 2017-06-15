@@ -1,4 +1,8 @@
-<p>
-    sale works!
-    <app-select [list]="list" (selected)="select($event)"></app-select>
-</p>
+<div style="padding: 20px">
+    <app-select [label]="'业务组'" [list]="list" (selected)="select($event)" [(ngModel)]="query.id"></app-select>
+    <hr>
+    <app-search [list]="list" (selected)="selected($event)"></app-search>
+</div>
+
+
+

@@ -14,16 +14,19 @@ export class SaleComponent implements OnInit {
     }
 
     list = [
+        {id:0,name:'全部'},
         {id:1,name:'11'},
         {id:2,name:'22'},
         {id:3,name:'33'},
-        {id:4,name:'44'},
-        {id:5,name:'55'},
-        {id:6,name:'66'},
-        {id:7,name:'77'},
     ]
 
+    query:any = {}
+
     select(value?){
+        console.info(value);
+    }
+
+    selected(value){
         console.info(value);
     }
 

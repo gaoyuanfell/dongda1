@@ -1,19 +1,17 @@
 <div class="select-modal" tabindex="0">
-    <div class="group-title" #groupTitle>
-        业务组
+    <div class="group-title" #groupTitle *ngIf="label">
+        {{label}}
     </div>
     <div class="console-search">
-        <p #consoleValue (click)="targetDropDown()">{{valueText}}</p>
+        <p #consoleValue (click)="targetDropDown()">{{value[valueField] || valueText}}</p>
         <div class="console-drop-down" #consoleDropDown>
-            <div class="drop-down-shadow">
-                <div class="search">
-                    <input type="search" #inputSearch tabindex="1" placeholder="过滤">
-                    <i class="icon-svg"></i>
-                </div>
-                <ul *ngIf="list.length != 0;">
-                    <li *ngFor="let l of list;index as i;" (click)="select(l)">{{l[valueField]}}</li>
-                </ul>
+            <div class="search" *ngIf="searchCtrl">
+                <input type="search" #inputSearch tabindex="1" placeholder="过滤">
+                <i class="icon-svg"></i>
             </div>
+            <ul *ngIf="list.length != 0">
+                <li *ngFor="let l of list;index as i;" (click)="select(l)" [ngClass]="{'selected':value === l}">{{l[valueField]}}</li>
+            </ul>
         </div>
     </div>
 </div>

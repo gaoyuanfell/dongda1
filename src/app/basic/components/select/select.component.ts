@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output, Renderer2, ViewChild} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
@@ -13,12 +13,22 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
     styleUrls: ['./select.component.less'],
     providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class SelectComponent implements OnInit,OnDestroy,ControlValueAccessor {
+export class SelectComponent implements OnDestroy,ControlValueAccessor,AfterViewInit {
+
+    onChange = (value: any) => {};
 
     writeValue(obj: any): void {
+        if(obj !== null || obj !== undefined){
+            let l = this.list.map((d)=> {return d[this.keyField]});
+            let index = l.indexOf(obj);
+            if(index !== -1){
+                this.value = this.list[index];
+            }
+        }
     }
 
     registerOnChange(fn: any): void {
+        this.onChange = fn;
     }
 
     registerOnTouched(fn: any): void {
@@ -31,13 +41,15 @@ export class SelectComponent implements OnInit,OnDestroy,ControlValueAccessor {
     constructor(private _renderer: Renderer2,private _elRef:ElementRef) {
     }
 
-    ngOnInit() {
+    ngAfterViewInit(): void {
         this.initEvent();
     }
 
     removeWindowClick;
     selectStatus: 1 | 2 | 3 | 4 = 1;//1关闭状态 2正在打开状态 3打开状态 4正在关闭状态
     valueText:string = '全部';
+    filterCache:any = {};
+    value:any = {};
 
     targetDropDown() {
         switch (this.selectStatus) {
@@ -51,9 +63,10 @@ export class SelectComponent implements OnInit,OnDestroy,ControlValueAccessor {
     }
 
     open() {
-
-        this.inputSearch.nativeElement.select();
-        this.inputSearch.nativeElement.focus();
+        if(this.searchCtrl){
+            this.inputSearch.nativeElement.select();
+            this.inputSearch.nativeElement.focus();
+        }
         this._renderer.addClass(this.consoleDropDown.nativeElement, 'active');
         this.selectStatus = 2;
         setTimeout(() => {
@@ -70,9 +83,10 @@ export class SelectComponent implements OnInit,OnDestroy,ControlValueAccessor {
     }
 
     select(value){
-        this.valueText = value[this.valueField];
         this.close();
         this.selected.emit(value);
+        this.onChange(value[this.keyField]);
+        this.value = value;
     }
 
     initEvent(){
@@ -80,12 +94,12 @@ export class SelectComponent implements OnInit,OnDestroy,ControlValueAccessor {
             let bo = this._elRef.nativeElement.contains(e.target);
             !bo && this.close();
         });
-        this._renderer.listen(this.inputSearch.nativeElement,'input',(e:any)=>{
-            this.filterData(e.target.value);
-        })
+        if(this.searchCtrl){
+            this._renderer.listen(this.inputSearch.nativeElement,'input',(e:any)=>{
+                this.filterData(e.target.value);
+            })
+        }
     }
-
-    filterCache:any = {};
 
     filterData(newV){
         let list = this.list;
@@ -93,6 +107,7 @@ export class SelectComponent implements OnInit,OnDestroy,ControlValueAccessor {
         console.info(filterCache);
         if(!list) return;
         for (let a in filterCache) {
+            if(!filterCache.hasOwnProperty(a)) continue;
             if(!isNaN(parseInt(a))){
                 list.splice(+a, 0, filterCache[a]);
                 delete filterCache[a];
@@ -118,9 +133,11 @@ export class SelectComponent implements OnInit,OnDestroy,ControlValueAccessor {
     @ViewChild("groupTitle") groupTitle: ElementRef;
     @ViewChild("inputSearch") inputSearch: ElementRef;
 
-    @Input('valueField') valueField = 'name';
-    @Input('keyField') keyField = 'id';
+    @Input('valueField') valueField = 'name';//展示的文本
+    @Input('keyField') keyField = 'id';//选择的标识
+    @Input('searchCtrl') searchCtrl = true;//开启下拉搜索
     @Input('list') list = [];
+    @Input('label') label;
 
     @Output() selected = new EventEmitter<any>();
 
